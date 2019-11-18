@@ -1,5 +1,8 @@
+const rangy = require('./core')
+const log4javascript = require('log4javascript')
+
 // DOM utility methods used by Rangy
-/* build:replaceWith(api) */rangy/* build:replaceEnd */.createCoreModule("DomUtil", [], function(api, module) {
+rangy.createCoreModule("DomUtil", [], function(api, module) {
     var log = log4javascript.getLogger("rangy.dom");
     var UNDEF = "undefined";
     var util = api.util;

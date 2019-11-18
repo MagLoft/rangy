@@ -1,5 +1,8 @@
+const rangy = require('./core')
+const log4javascript = require('log4javascript')
+
 // Wrappers for the browser's native DOM Range and/or TextRange implementation
-/* build:replaceWith(api) */rangy/* build:replaceEnd */.createCoreModule("WrappedRange", ["DomRange"], function(api, module) {
+rangy.createCoreModule("WrappedRange", ["DomRange"], function(api, module) {
     var WrappedRange, WrappedTextRange;
     var dom = api.dom;
     var util = api.util;

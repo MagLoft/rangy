@@ -63,7 +63,8 @@
  * Problem is whether Rangy should ever acknowledge the space and if so, when. Another problem is whether this can be
  * feature-tested
  */
-/* build:modularizeWithRangyDependency */
+const log4javascript = require('log4javascript')
+
 rangy.createModule("TextRange", ["WrappedSelection"], function(api, module) {
     var UNDEF = "undefined";
     var CHARACTER = "character", WORD = "word";
@@ -1996,4 +1997,5 @@ rangy.createModule("TextRange", ["WrappedSelection"], function(api, module) {
         )
     };
 });
-/* build:modularizeEnd */
+
+module.exports = rangy.modules.TextRange

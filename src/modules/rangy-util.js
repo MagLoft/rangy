@@ -12,7 +12,6 @@
  * Version: %%build:version%%
  * Build date: %%build:date%%
  */
-/* build:modularizeWithRangyDependency */
 rangy.createModule("Util", ["WrappedSelection"], function(api, module) {
     var rangeProto = api.rangePrototype;
     var selProto = api.selectionPrototype;
@@ -103,4 +102,5 @@ rangy.createModule("Util", ["WrappedSelection"], function(api, module) {
 
     // TODO: simple selection save/restore
 });
-/* build:modularizeEnd */
+
+module.exports = rangy.modules.Util

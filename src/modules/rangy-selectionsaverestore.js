@@ -12,7 +12,6 @@
  * Version: %%build:version%%
  * Build date: %%build:date%%
  */
-/* build:modularizeWithRangyDependency */
 rangy.createModule("SaveRestore", ["WrappedRange"], function(api, module) {
     var dom = api.dom;
     var removeNode = dom.removeNode;
@@ -236,4 +235,5 @@ rangy.createModule("SaveRestore", ["WrappedRange"], function(api, module) {
         removeMarkers: removeMarkers
     });
 });
-/* build:modularizeEnd */
+
+module.exports = rangy.modules.SaveRestore
