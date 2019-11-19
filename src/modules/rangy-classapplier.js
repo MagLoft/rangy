@@ -697,13 +697,10 @@ module.exports = function(rangy, window, document) { rangy.createModule("ClassAp
         postApply: function(textNodes, range, positionsToPreserve, isUndo) {
             log.group("postApply " + range.toHtml());
             var firstNode = textNodes[0], lastNode = textNodes[textNodes.length - 1];
-
             var merges = [], currentMerge;
-
             var rangeStartNode = firstNode, rangeEndNode = lastNode;
             var rangeStartOffset = 0, rangeEndOffset = lastNode.length;
-
-            var textNode, precedingTextNode;
+            var precedingTextNode;
 
             // Check for every required merge and create a Merge object for each
             forEach(textNodes, function(textNode) {
@@ -742,7 +739,7 @@ module.exports = function(rangy, window, document) { rangy.createModule("ClassAp
             // Apply the merges
             if (merges.length) {
                 log.info("Merging. Merges:", merges);
-                for (i = 0, len = merges.length; i < len; ++i) {
+                for (var i = 0, len = merges.length; i < len; ++i) {
                     merges[i].doMerge(positionsToPreserve);
                 }
                 log.info(rangeStartNode.nodeValue, rangeStartOffset, rangeEndNode.nodeValue, rangeEndOffset);

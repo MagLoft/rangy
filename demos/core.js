@@ -4,16 +4,21 @@ function gEBI(id) {
   return document.getElementById(id);
 }
 
+function getFirstRange() {
+  var sel = rangy.getSelection();
+  return sel.rangeCount ? sel.getRangeAt(0) : null;
+}
+
 function reportSelectionText() {
-  alert(rangy.getSelection().getRangeAt(0));
+  alert( rangy.getSelection().toString() );
 }
 
 function reportSelectionHtml() {
-  alert(rangy.getSelection().toHtml());
+  alert( rangy.getSelection().toHtml() );
 }
 
 function inspectSelection() {
-  alert(rangy.getSelection().inspect());
+  alert( rangy.getSelection().inspect() );
 }
 
 function deleteSelection() {
@@ -26,11 +31,6 @@ function collapseSelectionToStart() {
 
 function collapseSelectionToEnd() {
   rangy.getSelection().collapseToEnd();
-}
-
-function getFirstRange() {
-  var sel = rangy.getSelection();
-  return sel.rangeCount ? sel.getRangeAt(0) : null;
 }
 
 function showContent(frag) {
