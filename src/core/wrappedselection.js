@@ -417,7 +417,15 @@ module.exports = function(rangy, window, document) { rangy.createCoreModule("Wra
         return null;
     }
 
+    var selectionProvider = null;
+    var setSelectionProvider = function(value) {
+        selectionProvider = value;
+    };
+    api.setSelectionProvider = setSelectionProvider;
+
     var getSelection = function(win) {
+        if (selectionProvider != null) { return selectionProvider(api, win); }
+
         // Check if the parameter is a Rangy Selection object
         if (win && win instanceof WrappedSelection) {
             win.refresh();
