@@ -12,7 +12,8 @@
  * Version: %%build:version%%
  * Build date: %%build:date%%
  */
-rangy.createModule("Util", ["WrappedSelection"], function(api, module) {
+
+module.exports = function(rangy, window, document) { rangy.createModule("Util", ["WrappedSelection"], function(api, module) {
     var rangeProto = api.rangePrototype;
     var selProto = api.selectionPrototype;
 
@@ -101,6 +102,4 @@ rangy.createModule("Util", ["WrappedSelection"], function(api, module) {
     })();
 
     // TODO: simple selection save/restore
-});
-
-module.exports = rangy.modules.Util
+})};

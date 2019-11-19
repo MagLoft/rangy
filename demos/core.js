@@ -1,3 +1,5 @@
+const rangy = window['rangy-loader'](window, document)
+
 function gEBI(id) {
   return document.getElementById(id);
 }
@@ -119,8 +121,6 @@ function createButton(parentNode, clickHandler, value) {
 }
 
 window.onload = function() {
-  rangy.init();
-
   // Enable multiple selections in IE
   try {
       document.execCommand("MultipleSelection", true, true);

@@ -27,7 +27,7 @@
     "type": "git",
     "url": "https://github.com/timdown/rangy.git"
   },
-  "main": "dist/rangy.js",
+  "main": "dist/rangyLoader.js",
   "scripts": {
     "serve": "webpack-dev-server -d",
     "dev": "webpack -d --watch",

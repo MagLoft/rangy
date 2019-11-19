@@ -14,7 +14,7 @@
  */
 const log4javascript = require('log4javascript')
 
-rangy.createModule("ClassApplier", ["WrappedSelection"], function(api, module) {
+module.exports = function(rangy, window, document) { rangy.createModule("ClassApplier", ["WrappedSelection"], function(api, module) {
     var dom = api.dom;
     var DomPosition = dom.DomPosition;
     var contains = dom.arrayContains;
@@ -1120,6 +1120,4 @@ rangy.createModule("ClassApplier", ["WrappedSelection"], function(api, module) {
     api.CssClassApplier = api.ClassApplier = ClassApplier;
     api.createClassApplier = createClassApplier;
     util.createAliasForDeprecatedMethod(api, "createCssClassApplier", "createClassApplier", module);
-});
-
-module.exports = rangy.modules.ClassApplier
+})};

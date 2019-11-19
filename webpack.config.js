@@ -11,7 +11,7 @@ module.exports = {
     host: '127.0.0.1'
   },
   entry: {
-    'rangy': './src/rangy.js',
+    'rangy-loader': './src/rangy-loader.js',
     'rangy-classapplier': './src/modules/rangy-classapplier.js',
     'rangy-highlighter': './src/modules/rangy-highlighter.js',
     'rangy-selectionsaverestore': './src/modules/rangy-selectionsaverestore.js',

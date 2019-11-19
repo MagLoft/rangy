@@ -1,8 +1,7 @@
-const rangy = require('./core')
 const log4javascript = require('log4javascript')
 
 // Pure JavaScript implementation of DOM Range
-rangy.createCoreModule("DomRange", ["DomUtil"], function(api, module) {
+module.exports = function(rangy, window, document) { rangy.createCoreModule("DomRange", ["DomUtil"], function(api, module) {
     var log = log4javascript.getLogger("rangy.DomRange");
     var dom = api.dom;
     var util = api.util;
@@ -1234,4 +1233,4 @@ rangy.createCoreModule("DomRange", ["DomUtil"], function(api, module) {
     });
 
     api.DomRange = Range;
-});
+})};

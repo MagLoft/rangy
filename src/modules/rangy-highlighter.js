@@ -9,7 +9,7 @@
  * Version: %%build:version%%
  * Build date: %%build:date%%
  */
-rangy.createModule("Highlighter", ["ClassApplier"], function(api, module) {
+module.exports = function(rangy, window, document) { rangy.createModule("Highlighter", ["ClassApplier"], function(api, module) {
     var dom = api.dom;
     var contains = dom.arrayContains;
     var getBody = dom.getBody;
@@ -602,6 +602,4 @@ rangy.createModule("Highlighter", ["ClassApplier"], function(api, module) {
     api.createHighlighter = function(doc, rangeCharacterOffsetConverterType) {
         return new Highlighter(doc, rangeCharacterOffsetConverterType);
     };
-});
-
-module.exports = rangy.modules.Highlighter
+})};

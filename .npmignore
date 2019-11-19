@@ -1,7 +1,6 @@
 roadmap.txt
 release_process.txt
 /demos
-/src
 /test
 webpack.config.js
 yarn.lock

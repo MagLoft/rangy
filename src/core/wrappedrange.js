@@ -1,8 +1,7 @@
-const rangy = require('./core')
 const log4javascript = require('log4javascript')
 
 // Wrappers for the browser's native DOM Range and/or TextRange implementation
-rangy.createCoreModule("WrappedRange", ["DomRange"], function(api, module) {
+module.exports = function(rangy, window, document) { rangy.createCoreModule("WrappedRange", ["DomRange"], function(api, module) {
     var WrappedRange, WrappedTextRange;
     var dom = api.dom;
     var util = api.util;
@@ -618,4 +617,4 @@ rangy.createCoreModule("WrappedRange", ["DomRange"], function(api, module) {
         }
         doc = win = null;
     });
-});
+})};

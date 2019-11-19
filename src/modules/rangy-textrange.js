@@ -65,7 +65,7 @@
  */
 const log4javascript = require('log4javascript')
 
-rangy.createModule("TextRange", ["WrappedSelection"], function(api, module) {
+module.exports = function(rangy, window, document) { rangy.createModule("TextRange", ["WrappedSelection"], function(api, module) {
     var UNDEF = "undefined";
     var CHARACTER = "character", WORD = "word";
     var dom = api.dom, util = api.util;
@@ -1996,6 +1996,4 @@ rangy.createModule("TextRange", ["WrappedSelection"], function(api, module) {
             }
         )
     };
-});
-
-module.exports = rangy.modules.TextRange
+})};

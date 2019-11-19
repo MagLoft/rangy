@@ -1,3 +1,7 @@
+const rangy = window['rangy-loader'](window, document, [
+  window['rangy-classapplier']
+])
+
 function gEBI(id) {
   return document.getElementById(id);
 }
@@ -17,7 +21,6 @@ function togglePinkLink() {
 }
 
 window.onload = function () {
-  rangy.init();
 
   // Enable buttons
   var classApplierModule = rangy.modules.ClassApplier;

@@ -13,7 +13,7 @@
  * Version: %%build:version%%
  * Build date: %%build:date%%
  */
-rangy.createModule("Serializer", ["WrappedSelection"], function(api, module) {
+module.exports = function(rangy, window, document) { rangy.createModule("Serializer", ["WrappedSelection"], function(api, module) {
     var UNDEF = "undefined";
     var util = api.util;
 
@@ -296,6 +296,4 @@ rangy.createModule("Serializer", ["WrappedSelection"], function(api, module) {
     });
 
     util.crc32 = crc32;
-});
-
-module.exports = rangy.modules.Serializer
+})};

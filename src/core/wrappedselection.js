@@ -1,9 +1,8 @@
-const rangy = require('./core')
 const log4javascript = require('log4javascript')
 
 // This module creates a selection object wrapper that conforms as closely as possible to the Selection specification
-// in the HTML Editing spec (http://dvcs.w3.org/hg/editing/raw-file/tip/editing.html#selections)
-rangy.createCoreModule("WrappedSelection", ["DomRange", "WrappedRange"], function(api, module) {
+    // in the HTML Editing spec (http://dvcs.w3.org/hg/editing/raw-file/tip/editing.html#selections)
+module.exports = function(rangy, window, document) { rangy.createCoreModule("WrappedSelection", ["DomRange", "WrappedRange"], function(api, module) {
     api.config.checkSelectionRanges = true;
 
     var BOOLEAN = "boolean";
@@ -1026,4 +1025,4 @@ rangy.createCoreModule("WrappedSelection", ["DomRange", "WrappedRange"], functio
         }
         win = null;
     });
-});
+})};

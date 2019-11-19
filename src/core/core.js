@@ -9,6 +9,7 @@
  */
 const log4javascript = require('log4javascript')
 
+module.exports = function(window, document) {
 var log = log4javascript.getLogger("rangy.core");
 
 var OBJECT = "object", FUNCTION = "function", UNDEFINED = "undefined";
@@ -454,31 +455,5 @@ api.rangePrototype = new RangePrototype();
 function SelectionPrototype() {}
 api.selectionPrototype = new SelectionPrototype();
 
-// Wait for document to load before initializing
-var docReady = false;
-
-var loadHandler = function(e) {
-    log.info("loadHandler triggered by " + (e ? e.type + " event" : "document already loaded"));
-    if (!docReady) {
-        docReady = true;
-        if (!api.initialized && api.config.autoInitialize) {
-            init();
-        }
-    }
-};
-
-if (isBrowser) {
-    // Test whether the document has already been loaded and initialize immediately if so
-    if (document.readyState == "complete") {
-        loadHandler();
-    } else {
-        if (isHostMethod(document, "addEventListener")) {
-            document.addEventListener("DOMContentLoaded", loadHandler, false);
-        }
-
-        // Add a fallback in case the DOMContentLoaded event isn't supported
-        addListener(window, "load", loadHandler);
-    }
+return api;
 }
-
-module.exports = api;

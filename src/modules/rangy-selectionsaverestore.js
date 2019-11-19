@@ -12,7 +12,7 @@
  * Version: %%build:version%%
  * Build date: %%build:date%%
  */
-rangy.createModule("SaveRestore", ["WrappedRange"], function(api, module) {
+module.exports = function(rangy, window, document) { rangy.createModule("SaveRestore", ["WrappedRange"], function(api, module) {
     var dom = api.dom;
     var removeNode = dom.removeNode;
     var isDirectionBackward = api.Selection.isDirectionBackward;
@@ -234,6 +234,4 @@ rangy.createModule("SaveRestore", ["WrappedRange"], function(api, module) {
         removeMarkerElement: removeMarkerElement,
         removeMarkers: removeMarkers
     });
-});
-
-module.exports = rangy.modules.SaveRestore
+})};
