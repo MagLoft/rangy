@@ -1,7 +1,7 @@
 {
   "name": "@magloft/rangy",
   "description": "A cross-browser DOM range and selection library",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "author": {
     "name": "Tim Down",
     "email": "tim@timdown.co.uk",
