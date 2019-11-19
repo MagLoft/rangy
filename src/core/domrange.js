@@ -518,7 +518,9 @@ module.exports = function(rangy, window, document) { rangy.createCoreModule("Dom
 
     function rangeToHtml(range) {
         assertRangeValid(range);
-        var container = range.commonAncestorContainer.parentNode.cloneNode(false);
+        var container = (range.commonAncestorContainer.parentNode.nodeType === 11)
+            ? range.getDocument().createElement('div')
+            : range.commonAncestorContainer.parentNode.cloneNode(false);
         container.appendChild( range.cloneContents() );
         return container.innerHTML;
     }
