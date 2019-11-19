@@ -1676,7 +1676,7 @@ module.exports = function(rangy, window, document) { rangy.createModule("TextRan
                     var endPos = session.getRangeBoundaryPosition(this, false);
 
                     var startTokenizedTextProvider = createTokenizedTextProvider(startPos, characterOptions, wordOptions);
-                    var startToken = startTokenizedTextProvider.nextEndToken();
+                    var startToken = startTokenizedTextProvider.nextEndToken() || startTokenizedTextProvider.previousStartToken();
                     var newStartPos = startToken.chars[0].previousVisible();
                     var endToken, newEndPos;
 
